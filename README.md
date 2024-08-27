@@ -102,13 +102,6 @@ This project is an Express.js API that provides endpoints to store, retrieve, an
    }
    ```
 
-#### Method 2: Using `priv8-localcache`
-
- + Install the `priv8-localcache` package globally:
-   ```bash
-   npm install -g priv8-localcache
-   ```
-
 ### [Running the Server](#running-the-server)
 
 Start the server using:
