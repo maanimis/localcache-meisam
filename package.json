@@ -1,0 +1,40 @@
+{
+  "name": "priv8-localcache2",
+  "version": "1.0.0",
+  "description": "[personal] An Express.js API for managing in-memory and local storage.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "NODE_ENV=production node ./src/app.js",
+    "dev": "NODE_ENV=development DEBUG=app:* node --watch --trace-warnings src/app.js",
+    "lint": "eslint ./src '**/*.js'"
+  },
+  "bin": {
+    "localcache": "./src/app.js"
+  },
+  "keywords": [
+    "express",
+    "api",
+    "localstorage",
+    "in-memory",
+    "node"
+  ],
+  "author": "maanimis",
+  "license": "ISC",
+  "dependencies": {
+    "config": "^3.3.12",
+    "cors": "^2.8.5",
+    "debug": "^4.3.6",
+    "express": "^4.19.2",
+    "node-localstorage": "^3.0.5"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.9.1",
+    "eslint": "^9.9.1",
+    "globals": "^15.9.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maanimis/localCache.git"
+  }
+}
