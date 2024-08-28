@@ -1,5 +1,5 @@
 {
-  "name": "priv8-localcache2",
+  "name": "priv8-localcache",
   "version": "1.0.0",
   "description": "[personal] An Express.js API for managing in-memory and local storage.",
   "main": "index.js",
