@@ -15,12 +15,18 @@ class LocalStorage {
     this.storage.setItem(key, value);
   }
 
-  getItem(key) {
-    return this.storage.getItem(key) || null;
+  getItem(...keys) {
+    const result = {};
+    for (const key of keys) {
+      result[key] = this.storage.getItem(keys) || null;
+    }
+    return result;
   }
 
-  removeItem(key) {
-    this.storage.removeItem(key);
+  removeItem(...keys) {
+    for (const key of keys) {
+      this.storage.removeItem(key);
+    }
   }
 
   clear() {

@@ -19,8 +19,10 @@ export default class InMemoryStorage {
     return this.storage;
   }
 
-  removeItem(key) {
-    delete this.storage[key];
+  removeItem(...keys) {
+    for (const key of keys) {
+      delete this.storage[key];
+    }
   }
 
   clear() {
