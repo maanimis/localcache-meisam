@@ -10,7 +10,7 @@
     "lint": "eslint ./src '**/*.js'"
   },
   "bin": {
-    "localcache-meisam": "./src/bin/localcache-meisam.js"
+    "localcache-meisam": "./src/app.js"
   },
   "keywords": [
     "express",
