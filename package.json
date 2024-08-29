@@ -1,16 +1,16 @@
 {
-  "name": "priv8-localcache",
-  "version": "1.0.0",
+  "name": "localcache-meisam",
+  "version": "2.0.0",
   "description": "[personal] An Express.js API for managing in-memory and local storage.",
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "NODE_ENV=production node ./src/app.js",
-    "dev": "NODE_ENV=development DEBUG=app:* node --watch --trace-warnings src/app.js",
+    "start": "node ./src/app.js",
+    "dev": "DEBUG=app:* node --watch --trace-warnings src/app.js",
     "lint": "eslint ./src '**/*.js'"
   },
   "bin": {
-    "localcache": "./src/app.js"
+    "localcache-meisam": "./src/bin/localcache-meisam.js"
   },
   "keywords": [
     "express",
@@ -22,7 +22,6 @@
   "author": "maanimis",
   "license": "ISC",
   "dependencies": {
-    "config": "^3.3.12",
     "cors": "^2.8.5",
     "debug": "^4.3.6",
     "express": "^4.19.2",

@@ -1,8 +1,8 @@
-import config from "config";
+import { config } from "../config.js";
 import LocalStorage from "../models/localStorage.js";
 import Msg from "../utils/msg.js";
 
-const dbDir = config.get("dbDir");
+const dbDir = config.dbDir;
 const localStorage = new LocalStorage(dbDir);
 
 export const setLocalItem = (req, res) => {

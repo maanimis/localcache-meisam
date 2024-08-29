@@ -82,8 +82,8 @@ This project is an Express.js API that provides endpoints to store, retrieve, an
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/maanimis/localCache
-   cd localCache
+   git clone https://github.com/maanimis/localcache-meisam
+   cd localcache-meisam
    ```
 
 2. Install dependencies:
@@ -91,17 +91,14 @@ This project is an Express.js API that provides endpoints to store, retrieve, an
    npm install
    ```
 
-3. Create a configuration file `config/default.json` with the following structure:
-   ```json
-   {
-     "api": {
-       "port": 3000,
-       "ip": "127.0.0.1"
-     },
-     "dbDir": "temp"
-   }
+#### Method 2: Using `localcache-meisam`
+
+ + Install the `localcache-meisam` package globally:
+   ```bash
+   npm install -g localcache-meisam
    ```
 
+   
 ### [Running the Server](#running-the-server)
 
 Start the server using:

@@ -2,7 +2,7 @@
 
 import express from "express";
 import debugLib from "debug";
-import config from "config";
+import { config } from "./config.js";
 import cors from "cors";
 import {
   setMemoryItem,
@@ -18,8 +18,8 @@ import Msg from "./utils/msg.js";
 
 const debug = debugLib("app");
 const app = express();
-const PORT = config.get("api.port");
-const IP = config.get("api.ip");
+const PORT = config.api.port;
+const IP = config.api.ip;
 
 app.use(cors());
 app.use(express.json());
