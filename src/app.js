@@ -15,6 +15,7 @@ import {
   clearLocalStorage,
 } from "./controllers/localController.js";
 import Msg from "./utils/msg.js";
+import { logo } from "./logo.js";
 
 const debug = debugLib("app");
 const app = express();
@@ -43,5 +44,6 @@ app.use((req, res) => {
 
 debug("Server initialization");
 app.listen(PORT, IP, () => {
+  logo();
   console.log(`\n[+] Server running at http://${IP}:${PORT}`);
 });
