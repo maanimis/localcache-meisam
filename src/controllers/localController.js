@@ -1,7 +1,9 @@
 import { config } from "../config.js";
 import LocalStorage from "../models/localStorage.js";
 import Msg from "../utils/msg.js";
+import debugLib from "debug";
 
+const debug = debugLib("app:localController");
 const dbDir = config.dbDir;
 const localStorage = new LocalStorage(dbDir);
 
@@ -12,6 +14,7 @@ export const setLocalItem = (req, res) => {
       .status(400)
       .json(new Msg({ success: false, msg: "Key and value are required" }));
   }
+  debug("[localStorage]setting key:", key, "value:", value);
   localStorage.setItem(key, value);
   res
     .status(200)
@@ -20,7 +23,8 @@ export const setLocalItem = (req, res) => {
 
 export const getLocalItem = (req, res) => {
   const keys = req.params.keys.split(",");
-  const value = localStorage.getItem(keys);
+  debug("[localStorage]getting:", keys);
+  const value = localStorage.getItem(...keys);
   if (value === null) {
     return res
       .status(404)
@@ -31,7 +35,8 @@ export const getLocalItem = (req, res) => {
 
 export const removeLocalItem = (req, res) => {
   const keys = req.params.keys.split(",");
-  localStorage.removeItem(keys);
+  debug("[localStorage]removing:", keys);
+  localStorage.removeItem(...keys);
   res
     .status(200)
     .json(new Msg({ success: true, msg: "Data removed from local storage" }));
