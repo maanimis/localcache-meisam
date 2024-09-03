@@ -18,9 +18,9 @@ class LocalStorage {
   getItem(...keys) {
     const result = {};
     for (const key of keys) {
-      result[key] = this.storage.getItem(keys) || null;
+      result[key] = this.storage.getItem(key) || null;
     }
-    return result;
+    return JSON.stringify(result);
   }
 
   removeItem(...keys) {
@@ -30,9 +30,16 @@ class LocalStorage {
   }
 
   clear() {
-    fs.readdirSync(this.dir).forEach((file) =>
-      fs.unlinkSync(path.join(this.dir, file))
-    );
+    fs.readdirSync(this.dir).forEach((file) => {
+      const filePath = path.join(this.dir, file);
+      try {
+        if (fs.existsSync(filePath)) {
+          fs.unlinkSync(filePath);
+        }
+      } catch (error) {
+        console.log("Error while deleting file:", filePath, error);
+      }
+    });
   }
 }
 

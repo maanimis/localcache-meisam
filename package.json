@@ -1,13 +1,14 @@
 {
   "name": "localcache-meisam",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "description": "[personal] An Express.js API for managing in-memory and local storage.",
   "main": "index.js",
   "type": "module",
   "scripts": {
     "start": "node ./src/app.js",
     "dev": "DEBUG=app:* node --watch --trace-warnings src/app.js",
-    "lint": "eslint ./src '**/*.js'"
+    "lint": "eslint ./src '**/*.js'",
+    "test": "node src/models/test.js"
   },
   "bin": {
     "localcache-meisam": "./src/app.js"

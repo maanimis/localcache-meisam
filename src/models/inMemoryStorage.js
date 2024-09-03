@@ -1,4 +1,4 @@
-export default class InMemoryStorage {
+class InMemoryStorage {
   constructor() {
     this.storage = {};
   }
@@ -12,7 +12,7 @@ export default class InMemoryStorage {
     for (const key of keys) {
       result[key] = this.storage[key] || null;
     }
-    return result;
+    return JSON.stringify(result);
   }
 
   getAll() {
@@ -29,3 +29,5 @@ export default class InMemoryStorage {
     this.storage = {};
   }
 }
+
+export default InMemoryStorage;
