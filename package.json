@@ -1,6 +1,6 @@
 {
   "name": "localcache-meisam",
-  "version": "2.5.0",
+  "version": "2.6.0",
   "description": "[personal] An Express.js API for managing in-memory and local storage.",
   "main": "src/models/index.js",
   "type": "module",

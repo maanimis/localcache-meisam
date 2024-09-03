@@ -1,7 +1,7 @@
 import Msg from "./msg.js";
 
 function isJson(str) {
-  const result = new Msg();
+  const result = new Msg({});
   try {
     result.obj = JSON.parse(str);
     result.success = true;

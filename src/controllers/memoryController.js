@@ -26,5 +26,5 @@ export const getMemoryItems = (req, res) => {
       .status(404)
       .json(new Msg({ success: false, msg: "Data not found" }));
   }
-  res.status(200).json(new Msg({ success: true, obj: values }));
+  res.status(200).json(new Msg({ success: true, obj: { ...values } }));
 };

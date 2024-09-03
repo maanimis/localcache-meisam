@@ -24,13 +24,18 @@ export const setLocalItem = (req, res) => {
 export const getLocalItem = (req, res) => {
   const keys = req.params.keys.split(",");
   debug("[localStorage]getting:", keys);
-  const value = localStorage.getItem(...keys);
-  if (value === null) {
+  const values = localStorage.getItem(...keys);
+  // if (value === null) {
+  //   return res
+  //     .status(404)
+  //     .json(new Msg({ success: false, msg: "Data not found" }));
+  // }
+  if (Object.values(values).every((value) => value === null)) {
     return res
       .status(404)
       .json(new Msg({ success: false, msg: "Data not found" }));
   }
-  res.status(200).json(new Msg({ success: true, obj: { value } }));
+  res.status(200).json(new Msg({ success: true, obj: { ...values } }));
 };
 
 export const removeLocalItem = (req, res) => {
