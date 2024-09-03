@@ -10,7 +10,7 @@ function testLocalStorage() {
 
   // Set items
   console.log("set (key1, key2, key3)");
-  localStorage.setItem("key1", JSON.stringify({ aa: 123 }));
+  localStorage.setItem("key1", { aa: 123 });
   localStorage.setItem("key2", "value2");
   localStorage.setItem("key3", "value3");
 
