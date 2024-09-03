@@ -1,18 +1,21 @@
+import { jsonParser } from "../utils/common.js";
+
 class InMemoryStorage {
   constructor() {
     this.storage = {};
   }
 
   setItem(key, value) {
-    this.storage[key] = value;
+    this.storage[key] = JSON.stringify(value);
   }
 
   getItem(...keys) {
     const result = {};
     for (const key of keys) {
-      result[key] = this.storage[key] || null;
+      const value = this.storage[key] || null;
+      result[key] = jsonParser(value);
     }
-    return JSON.stringify(result);
+    return result;
   }
 
   getAll() {

@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 import { LocalStorage as NodeLocalStorage } from "node-localstorage";
+import { jsonParser } from "../utils/common.js";
 
 class LocalStorage {
   constructor(dir) {
@@ -12,15 +13,16 @@ class LocalStorage {
   }
 
   setItem(key, value) {
-    this.storage.setItem(key, value);
+    this.storage.setItem(key, JSON.stringify(value));
   }
 
   getItem(...keys) {
     const result = {};
     for (const key of keys) {
-      result[key] = this.storage.getItem(key) || null;
+      const value = this.storage.getItem(key) || null;
+      result[key] = jsonParser(value);
     }
-    return JSON.stringify(result);
+    return result;
   }
 
   removeItem(...keys) {
