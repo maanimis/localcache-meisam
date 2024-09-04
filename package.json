@@ -1,7 +1,7 @@
 {
   "name": "localcache-meisam",
-  "version": "2.6.1",
-  "description": "[personal] An Express.js API for managing in-memory and local storage.",
+  "version": "2.7.0",
+  "description": "Managing in-memory and local storage through RESTful API endpoints ",
   "main": "src/models/index.js",
   "type": "module",
   "scripts": {
@@ -26,7 +26,8 @@
     "cors": "^2.8.5",
     "debug": "^4.3.6",
     "express": "^4.19.2",
-    "node-localstorage": "^3.0.5"
+    "node-localstorage": "^3.0.5",
+    "yargs": "^17.7.2"
   },
   "devDependencies": {
     "@eslint/js": "^9.9.1",

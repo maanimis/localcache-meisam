@@ -1,11 +1,10 @@
-import { config } from "../config.js";
 import LocalStorage from "../models/localStorage.js";
+import { argv } from "../utils/argv.js";
 import Msg from "../utils/msg.js";
 import debugLib from "debug";
 
 const debug = debugLib("app:localController");
-const dbDir = config.dbDir;
-const localStorage = new LocalStorage(dbDir);
+const localStorage = new LocalStorage(argv.db);
 
 export const setLocalItem = (req, res) => {
   const { key, value } = req.body;

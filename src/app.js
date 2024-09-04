@@ -2,7 +2,6 @@
 
 import express from "express";
 import debugLib from "debug";
-import { config } from "./config.js";
 import cors from "cors";
 import {
   setMemoryItem,
@@ -15,12 +14,11 @@ import {
   clearLocalStorage,
 } from "./controllers/localController.js";
 import Msg from "./utils/msg.js";
-import { logo } from "./logo.js";
+import { logo } from "./utils/logo.js";
+import { argv } from "./utils/argv.js";
 
 const debug = debugLib("app");
 const app = express();
-const PORT = config.api.port;
-const IP = config.api.ip;
 
 app.use(cors());
 app.use(express.json());
@@ -43,7 +41,7 @@ app.use((req, res) => {
 });
 
 debug("Server initialization");
-app.listen(PORT, IP, () => {
+app.listen(argv.port, argv.ip, () => {
   logo();
-  console.log(`\n[+] Server running at http://${IP}:${PORT}`);
+  console.log(`\n[+] Server running at http://${argv.ip}:${argv.port}`);
 });

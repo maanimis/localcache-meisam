@@ -16,6 +16,17 @@ A Node.js application for managing in-memory and local storage with RESTful API 
 
 This project provides a basic API for interacting with both in-memory storage and file-based local storage. It supports setting, getting, removing, and clearing data. It includes an Express-based server that exposes these functionalities via HTTP endpoints.
 
+```
+─➤  localcache-meisam -h                                                 
+Options:
+      --version      Show version number                               [boolean]
+      --ip           IP address                    [string] [default: "0.0.0.0"]
+  -p, --port         PORT                               [number] [default: 3000]
+      --dbDir, --db  Data Storage Directory           [string] [default: "DATA"]
+      --debug        Show debug logs                  [boolean] [default: false]
+  -h, --help         Show help                                         [boolean]
+
+```
 ## Installation
 
 To get started, you have two options:
