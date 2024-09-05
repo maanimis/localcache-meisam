@@ -2,6 +2,7 @@
 
 import express from "express";
 import debugLib from "debug";
+import { argv } from "./utils/argv.js";
 import cors from "cors";
 import {
   setMemoryItem,
@@ -15,9 +16,8 @@ import {
 } from "./controllers/localController.js";
 import Msg from "./utils/msg.js";
 import { logo } from "./utils/logo.js";
-import { argv } from "./utils/argv.js";
 
-const debug = debugLib("app");
+const debug = debugLib("app:main");
 const app = express();
 
 app.use(cors());

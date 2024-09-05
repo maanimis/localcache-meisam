@@ -35,7 +35,7 @@ const argv = yargs(hideBin(process.argv))
   .alias("help", "h").argv;
 
 if (argv.debug) {
-  debug.enable("app");
+  debug.enable("app:*");
 }
 
 export { argv };
